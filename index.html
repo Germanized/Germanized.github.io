@@ -8,7 +8,6 @@
   <style>
     body {
       font-family: 'Libre Franklin', sans-serif;
-      padding: 0;
       margin: 0;
       overflow: hidden;
       position: relative;
@@ -18,13 +17,13 @@
     body::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
       background: linear-gradient(45deg, #5b37fc, #8a1dfc, #9c0fbd, #52067d, #000);
       z-index: -1;
-      animation: rotateBackground 20s linear infinite, fadeInOutBackground 20s ease-in-out infinite;
+      animation: rotateBackground 40s linear infinite, fadeInOutBackground 20s ease-in-out infinite;
     }
 
     @keyframes rotateBackground {
@@ -32,7 +31,7 @@
         transform: rotate(0deg) scale(1);
       }
       100% {
-        transform: rotate(360deg) scale(1.5);
+        transform: rotate(360deg) scale(2);
       }
     }
 
@@ -47,53 +46,55 @@
 
     /* Store Title Styles */
     .store-title {
-      font-size: 36px;
+      font-size: 48px;
       text-align: center;
-      margin-top: 3rem;
-      background: linear-gradient(90deg, #b89bff, #5b37fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin-top: 100px;
+      color: #5b37fc;
       font-weight: bold;
-      animation: colorChange 4s infinite alternate;
+      animation: fadeIn 2s ease;
     }
 
-    @keyframes colorChange {
-      0%, 100% {
-        color: #5b37fc;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
-      50% {
-        color: #b89bff;
+      to {
+        opacity: 1;
       }
     }
 
     /* Top Tabs Styles */
     .top-tabs {
       display: flex;
-      justify-content: space-around;
-      background-color: #000;
+      justify-content: center;
+      background-color: #5b37fc;
       padding: 10px 0;
     }
 
     .top-tab {
-      color: #b89bff;
+      color: #fff;
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+      margin: 0 20px;
+      animation: fadeIn 2s ease;
     }
 
     .top-tab:hover {
-      background-color: #5b37fc;
+      color: #b89bff;
     }
 
     /* Main Content Styles */
     .main-content {
       padding: 40px;
-      color: #fff;
+      color: #5b37fc;
       text-align: center;
+      animation: fadeIn 2s ease;
     }
 
     .main-content h1 {
-      font-size: 48px;
+      font-size: 36px;
+      font-weight: bold;
     }
 
     .main-content p {
@@ -106,19 +107,42 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #000;
+      background-color: #5b37fc;
       padding: 10px 0;
       text-align: center;
-      color: #b89bff;
+      color: #fff;
       font-weight: bold;
+    }
+
+    /* Contact Info Styles */
+    .contact-info {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      display: none;
+      animation: fadeIn 0.5s ease, slideIn 0.5s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translate(-50%, -80%);
+      }
+      to {
+        transform: translate(-50%, -50%);
+      }
     }
   </style>
 </head>
 <body>
   <div class="top-tabs">
     <div class="top-tab">Germanized Store</div>
-    <a href="products.html" class="top-tab">Products</a>
-    <a href="contact.html" class="top-tab">Contact Info</a>
+    <div class="top-tab">Products</div>
+    <div class="top-tab" onclick="showContactInfo()">Contact Info</div>
   </div>
 
   <div class="main-content">
@@ -126,6 +150,27 @@
     <p>Explore our amazing products and contact us for more information.</p>
   </div>
 
+  <div class="contact-info" id="contactInfo">
+    <h2>Contact Info</h2>
+    <p>Discord: pronhubstar</p>
+    <p>Email: whywontthisworkatall@gmail.com</p>
+    <p>Phone: 123-456-7890</p>
+    <button onclick="hideContactInfo()">Close</button>
+  </div>
+
   <div class="footer">Germanized Store &copy; 2023</div>
+
+  <script>
+    // JavaScript to handle contact info popup
+    const contactInfo = document.getElementById("contactInfo");
+
+    const showContactInfo = () => {
+      contactInfo.style.display = "block";
+    };
+
+    const hideContactInfo = () => {
+      contactInfo.style.display = "none";
+    };
+  </script>
 </body>
 </html>
