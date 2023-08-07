@@ -4,101 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Germanized Store</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
   <style>
+    /* Homepage Styles */
     body {
-      font-family: 'Libre Franklin', sans-serif;
-      margin: 0;
-      overflow: hidden;
-      position: relative;
+      background-color: #111;
+      color: #fff;
     }
 
-    /* Animated Background Styles */
-    body::before {
-      content: "";
-      position: absolute;
-      top: -100%;
-      left: -100%;
-      width: 300%;
-      height: 300%;
-      background: linear-gradient(45deg, #5b37fc, #8a1dfc, #9c0fbd, #52067d, #000);
-      z-index: -1;
-      animation: rotateBackground 40s linear infinite, fadeInOutBackground 20s ease-in-out infinite;
+    .homepage-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
     }
 
-    @keyframes rotateBackground {
-      0% {
-        transform: rotate(0deg) scale(1);
-      }
-      100% {
-        transform: rotate(360deg) scale(2);
-      }
-    }
-
-    @keyframes fadeInOutBackground {
-      0%, 100% {
-        opacity: 0.5;
-      }
-      50% {
-        opacity: 1;
-      }
-    }
-
-    /* Store Title Styles */
     .store-title {
       font-size: 48px;
-      text-align: center;
-      margin-top: 100px;
-      color: #5b37fc;
+      margin-bottom: 20px;
+      color: #b89bff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       font-weight: bold;
-      animation: fadeIn 2s ease;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+    .main-content {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .main-content p {
+      font-size: 20px;
+      color: #8a1dfc;
     }
 
     /* Top Tabs Styles */
     .top-tabs {
       display: flex;
       justify-content: center;
-      background-color: #5b37fc;
+      background-color: #52067d;
       padding: 10px 0;
     }
 
     .top-tab {
-      color: #fff;
+      color: #b89bff;
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
       margin: 0 20px;
-      animation: fadeIn 2s ease;
+      transition: color 0.3s;
+    }
+
+    .top-tab.active {
+      color: #fff;
     }
 
     .top-tab:hover {
-      color: #b89bff;
-    }
-
-    /* Main Content Styles */
-    .main-content {
-      padding: 40px;
-      color: #5b37fc;
-      text-align: center;
-      animation: fadeIn 2s ease;
-    }
-
-    .main-content h1 {
-      font-size: 36px;
-      font-weight: bold;
-    }
-
-    .main-content p {
-      font-size: 24px;
+      color: #fff;
     }
 
     /* Footer Styles */
@@ -107,69 +69,50 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #5b37fc;
+      background-color: #52067d;
       padding: 10px 0;
       text-align: center;
-      color: #fff;
+      color: #b89bff;
       font-weight: bold;
     }
 
-    /* Contact Info Styles */
-    .contact-info {
+    /* Dark Mode Button Styles */
+    .dark-mode-btn {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 30px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      border-radius: 10px;
-      display: none;
-      animation: fadeIn 0.5s ease, slideIn 0.5s ease;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translate(-50%, -80%);
-      }
-      to {
-        transform: translate(-50%, -50%);
-      }
+      bottom: 20px;
+      right: 20px;
+      background-color: #5b37fc;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <div class="top-tabs">
-    <div class="top-tab">Germanized Store</div>
-    <div class="top-tab">Products</div>
-    <div class="top-tab" onclick="showContactInfo()">Contact Info</div>
+    <a class="top-tab active" href="index.html">Germanized Store</a>
+    <a class="top-tab" href="products.html">Products</a>
+    <a class="top-tab" href="contact.html">Contact Info</a>
   </div>
 
-  <div class="main-content">
+  <div class="homepage-content">
     <h1 class="store-title">Welcome to Germanized Store</h1>
-    <p>Explore our amazing products and contact us for more information.</p>
-  </div>
-
-  <div class="contact-info" id="contactInfo">
-    <h2>Contact Info</h2>
-    <p>Discord: pronhubstar</p>
-    <p>Email: whywontthisworkatall@gmail.com</p>
-    <p>Phone: 123-456-7890</p>
-    <button onclick="hideContactInfo()">Close</button>
+    <div class="main-content">
+      <p>Explore our amazing products and contact us for more information.</p>
+    </div>
   </div>
 
   <div class="footer">Germanized Store &copy; 2023</div>
 
+  <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
   <script>
-    // JavaScript to handle contact info popup
-    const contactInfo = document.getElementById("contactInfo");
-
-    const showContactInfo = () => {
-      contactInfo.style.display = "block";
-    };
-
-    const hideContactInfo = () => {
-      contactInfo.style.display = "none";
+    // JavaScript to handle dark mode toggle
+    const toggleDarkMode = () => {
+      document.body.classList.toggle("dark-mode");
     };
   </script>
 </body>
