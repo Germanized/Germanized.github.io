@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Germanized Store - Products</title>
+  <title>Germanized Store - Contact Info</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap">
   <style>
     body {
       font-family: 'Libre Franklin', sans-serif;
-      padding: 0;
       margin: 0;
       overflow: hidden;
-      background-color: #5b37fc;
-      color: #fff;
+      position: relative;
+      background-color: #fff;
+      color: #5b37fc;
     }
 
     /* Top Tabs Styles */
     .top-tabs {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       background-color: #5b37fc;
       padding: 10px 0;
     }
@@ -28,77 +28,30 @@
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+      margin: 0 20px;
+      animation: fadeIn 2s ease;
     }
 
     .top-tab:hover {
-      background-color: #b89bff;
+      color: #b89bff;
     }
 
     /* Main Content Styles */
     .main-content {
       padding: 40px;
       text-align: center;
+      animation: fadeIn 2s ease;
     }
 
     .main-content h1 {
       font-size: 36px;
+      font-weight: bold;
     }
 
-    .product {
-      margin: 20px 0;
-    }
-
-    .product img {
-      width: 200px;
-    }
-
-    .product-title {
+    .contact-info {
+      margin-top: 40px;
       font-size: 24px;
-      font-weight: bold;
-      margin-top: 10px;
+      animation: fadeInUp 1s ease;
     }
 
-    .product-description {
-      font-size: 18px;
-    }
-
-    /* Footer Styles */
-    .footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #5b37fc;
-      padding: 10px 0;
-      text-align: center;
-      color: #fff;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="top-tabs">
-    <a href="index.html" class="top-tab">Germanized Store</a>
-    <div class="top-tab">Products</div>
-    <a href="contact.html" class="top-tab">Contact Info</a>
-  </div>
-
-  <div class="main-content">
-    <h1>Products</h1>
-
-    <div class="product">
-      <img src="product1.jpg" alt="Product 1">
-      <div class="product-title">Product 1</div>
-      <div class="product-description">Description for Product 1</div>
-    </div>
-
-    <div class="product">
-      <img src="product2.jpg" alt="Product 2">
-      <div class="product-title">Product 2</div>
-      <div class="product-description">Description for Product 2</div>
-    </div>
-  </div>
-
-  <div class="footer">Germanized Store &copy; 2023</div>
-</body>
-</html>
+    @keyframes fadeIn
