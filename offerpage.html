@@ -8,17 +8,17 @@
   <style>
     body {
       font-family: 'Libre Franklin', sans-serif;
-      padding: 0;
       margin: 0;
       overflow: hidden;
-      background-color: #5b37fc;
-      color: #fff;
+      position: relative;
+      background-color: #fff;
+      color: #5b37fc;
     }
 
     /* Top Tabs Styles */
     .top-tabs {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       background-color: #5b37fc;
       padding: 10px 0;
     }
@@ -28,28 +28,55 @@
       font-size: 18px;
       font-weight: bold;
       cursor: pointer;
+      margin: 0 20px;
+      animation: fadeIn 2s ease;
     }
 
     .top-tab:hover {
-      background-color: #b89bff;
+      color: #b89bff;
     }
 
     /* Main Content Styles */
     .main-content {
       padding: 40px;
       text-align: center;
+      animation: fadeIn 2s ease;
     }
 
     .main-content h1 {
       font-size: 36px;
+      font-weight: bold;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 40px;
+      margin-top: 40px;
     }
 
     .product {
-      margin: 20px 0;
+      background-color: #f3f3f3;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .product img {
-      width: 200px;
+      max-width: 100%;
     }
 
     .product-title {
@@ -60,6 +87,7 @@
 
     .product-description {
       font-size: 18px;
+      margin-top: 10px;
     }
 
     /* Footer Styles */
@@ -86,16 +114,20 @@
   <div class="main-content">
     <h1>Products</h1>
 
-    <div class="product">
-      <img src="product1.jpg" alt="Product 1">
-      <div class="product-title">Product 1</div>
-      <div class="product-description">Description for Product 1</div>
-    </div>
+    <div class="product-list">
+      <div class="product">
+        <img src="product1.jpg" alt="Product 1">
+        <div class="product-title">Product 1</div>
+        <div class="product-description">Description for Product 1</div>
+      </div>
 
-    <div class="product">
-      <img src="product2.jpg" alt="Product 2">
-      <div class="product-title">Product 2</div>
-      <div class="product-description">Description for Product 2</div>
+      <div class="product">
+        <img src="product2.jpg" alt="Product 2">
+        <div class="product-title">Product 2</div>
+        <div class="product-description">Description for Product 2</div>
+      </div>
+
+      <!-- Add more products here -->
     </div>
   </div>
 
