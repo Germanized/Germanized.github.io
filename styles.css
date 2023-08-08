@@ -1,0 +1,21 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  transition: background-color 0.5s;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #111;
+  color: #f1f1f1;
+}
+
+/* ... (Rest of the common styles for the pages) ... */
