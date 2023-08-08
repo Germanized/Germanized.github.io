@@ -11,7 +11,8 @@
       margin: 0;
       overflow: hidden;
       position: relative;
-      background-color: #111;
+      background-image: url('gif.gif'); /* Set the background image */
+      background-size: cover; /* Make the image cover the entire background */
       color: #f1f1f1;
     }
 
@@ -26,8 +27,8 @@
 
     .top-bar a {
       color: #b89bff;
-      font-size: 22px; /* Updated font size to 22px */
-      font-weight: bold; /* Added font weight bold */
+      font-size: 22px;
+      font-weight: bold;
       text-decoration: none;
       margin: 0 20px;
       transition: color 0.3s;
@@ -61,6 +62,9 @@
     .main-content p {
       font-size: 40px;
       color: #8a1dfc;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
 
     .footer {
@@ -75,15 +79,13 @@
       font-weight: bold;
     }
 
-    
-
     /* Dark Mode Styles */
     body.dark-mode {
-      background-color: #1a1a1a;
+      background-image: url('gif.gif');
+      background-size: cover;
       color: #e0e0e0;
     }
 
-    
     /* Animation for the dark mode transition */
     @keyframes backgroundAnimation {
       0% {
@@ -109,7 +111,7 @@
   <div class="homepage-content">
     <h1 class="store-title">Welcome to Germanized Store</h1>
     <div class="main-content">
-      <p>Explore our amazing products and contact us for more information.</p>
+      <p>Discover<span style="color: #b89bff;">.</span> Shop<span style="color: #b89bff;">.</span> Connect<span style="color: #b89bff;">.</span></p>
     </div>
   </div>
 
