@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -18,4 +19,97 @@ body.dark-mode {
   color: #f1f1f1;
 }
 
-/* ... (Rest of the common styles for the pages) ... */
+/* Common Styles for All Pages */
+.top-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: #52067d;
+  padding: 10px 0;
+}
+
+.top-tab {
+  color: #b89bff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 20px;
+  transition: color 0.3s;
+}
+
+.top-tab.active {
+  color: #fff;
+}
+
+.top-tab:hover {
+  color: #fff;
+}
+
+.main-content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main-content p {
+  font-size: 20px;
+  color: #8a1dfc;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #52067d;
+  padding: 10px 0;
+  text-align: center;
+  color: #b89bff;
+  font-weight: bold;
+}
+
+/* Dark Mode Button Styles */
+.dark-mode-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #5b37fc;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Homepage Specific Styles */
+body.homepage {
+  /* Use Google Fonts @import for custom font */
+  @import url('https://fonts.googleapis.com/css2?family=CoFo+Sans&display=swap');
+  font-family: 'CoFo Sans', sans-serif; /* Custom font for homepage */
+  color: #f1f1f1; /* Set the text color for homepage */
+}
+
+.homepage-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  /* Animation for the background */
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-color: #111; /* Starting color (black) */
+  }
+  100% {
+    background-color: #52067d; /* Ending color (dark purple) */
+  }
+}
+
+.store-title {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #b89bff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
