@@ -40,57 +40,37 @@
     /* Buy Page Specific Styles */
     .buy-content {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: space-around;
       padding: 40px;
     }
 
     .product-info {
       font-size: 20px;
       margin-bottom: 20px;
+      text-align: right;
     }
 
     .product-info span {
       color: #8a1dfc; /* Purple color for specific info */
     }
 
-    .purchase-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .form-field {
-      margin-bottom: 15px;
-    }
-
-    .form-field label {
-      display: block;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .form-field input {
-      padding: 8px;
+    .product-box {
+      background-color: #52067d;
+      color: #f1f1f1;
       font-size: 16px;
-      border: 1px solid #8a1dfc; /* Purple border */
-      border-radius: 5px;
+      padding: 20px;
+      border-radius: 10px; /* Rounded corners */
+      border: 2px solid #fff; /* White outline */
+      width: calc(50% - 40px); /* Adjust width based on your preference */
+      box-sizing: border-box;
     }
 
-    .form-field input[type="submit"] {
-      background-color: #301934; /* Purple background */
-      color: #fff; /* White text */
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .form-field input[type="submit"]:hover {
-      background-color: #2ecc71; /* Green on hover */
+    .product-image {
+      width: 100%;
+      height: 150px; /* Adjust the height as per your requirement */
+      object-fit: cover;
+      border-radius: 8px; /* Rounded corners for image */
     }
 
     .footer {
@@ -120,37 +100,39 @@
   </div>
 
   <div class="buy-content">
-    <h2 style="width: 100%; text-align: center; font-weight: bold;">Buy Fresh Valorant Account</h2>
-    <div class="product-info">
-      <p>Product: <span>Fresh Valorant Account </span></p>
-      <p>Stock: <span>12537</span></p>
-      <p>Price: <span>$0.50</span></p>
+    <div class="product-box">
+      <img class="product-image" src="offer1.png" alt="Offer 1">
+      <h3>Fresh Valorant Account</h3>
+      <p>A Fresh Valorant Account</p>
     </div>
-
-    <form class="purchase-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <div class="form-field">
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" min="1" max="100" required>
-      </div>
-      <div class="form-field">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="whywontthisworkatall@gmail.com">
-        <input type="hidden" name="item_name" value="Fresh Valorant Account">
-        <input type="hidden" name="amount" value="0.50">
-        <!-- Replace YOUR_CURRENCY_CODE with the appropriate currency code, e.g., USD, EUR, GBP, etc. -->
-        <input type="hidden" name="currency_code" value="USD">
-        <input type="submit" value="Purchase" id="purchase-button">
-      </div>
-    </form>
-    <p style="margin-top: 20px; font-size: 14px; text-align: center;">
-      After purchasing the account, you will receive an email from paypal. Simply reply to that email with the following details:
-      <br>
-      - Your Purchase ID
-      <br>
-      - Your PayPal Transaction ID
-      <br>
-      Tt will be sent to Us through PaypPal and We will verify the details and deliver the account. Delivery may take up to 72 hours.
-    </p>
+    <div class="product-info">
+      <h2 style="font-weight: bold;">Buy Fresh Valorant Account</h2>
+      <p>Product: <span>Fresh Valorant Account</span></p>
+      <p>Price: <span>$0.50</span></p>
+      <form class="purchase-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <div class="form-field">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="100" required>
+        </div>
+        <div class="form-field">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="whywontthisworkatall@gmail.com">
+          <input type="hidden" name="item_name" value="Fresh Valorant Account">
+          <input type="hidden" name="amount" value="0.50">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="submit" value="Purchase" id="purchase-button">
+        </div>
+      </form>
+      <p style="margin-top: 20px; font-size: 14px; text-align: center;">
+        After purchasing the account, you will receive an email from us. Simply reply to that email with the following details:
+        <br>
+        - Your Purchase ID
+        <br>
+        - Your PayPal Transaction ID
+        <br>
+        We will verify the details and deliver the account. Delivery may take up to 72 hours.
+      </p>
+    </div>
   </div>
 
   <div class="footer">Germanized Store &copy; 2023</div>
