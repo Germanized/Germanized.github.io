@@ -68,7 +68,7 @@
 
     .product-image {
       width: 100%;
-      height: 150px; /* Adjust the height as per your requirement */
+      height: 100%; /* Image will always be fully visible */
       object-fit: cover;
       border-radius: 8px; /* Rounded corners for image */
     }
@@ -89,6 +89,23 @@
     body.dark-mode {
       background-color: #1a1a1a;
       color: #e0e0e0;
+    }
+
+    /* Custom Styles for Purchase Button */
+    .purchase-button {
+      background-color: #301934; /* Purple background */
+      color: #fff; /* White text */
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .purchase-button:hover {
+      background-color: #2ecc71; /* Green on hover */
     }
   </style>
 </head>
@@ -119,33 +136,15 @@
           <input type="hidden" name="business" value="whywontthisworkatall@gmail.com">
           <input type="hidden" name="item_name" value="Fresh Valorant Account">
           <input type="hidden" name="amount" value="0.50">
+          <!-- Replace YOUR_CURRENCY_CODE with the appropriate currency code, e.g., USD, EUR, GBP, etc. -->
           <input type="hidden" name="currency_code" value="USD">
-          <input type="submit" value="Purchase" id="purchase-button">
+          <button class="purchase-button" type="submit">Purchase</button>
         </div>
       </form>
-      <p style="margin-top: 20px; font-size: 14px; text-align: center;">
-        After purchasing the account, you will receive an email from us. Simply reply to that email with the following details:
-        <br>
-        - Your Purchase ID
-        <br>
-        - Your PayPal Transaction ID
-        <br>
-        We will verify the details and deliver the account. Delivery may take up to 72 hours.
-      </p>
+      <p>After your purchase, you will receive an email with further instructions. Please allow up to 72 hours for delivery.</p>
     </div>
   </div>
 
   <div class="footer">Germanized Store &copy; 2023</div>
-
-  <script>
-    // JavaScript to handle the Purchase button click
-    document.getElementById('purchase-button').addEventListener('click', function() {
-      // Get the quantity input value
-      const quantity = document.getElementById('quantity').value;
-
-      // Set the quantity input value in the PayPal form
-      document.querySelector('input[name="quantity"]').value = quantity;
-    });
-  </script>
 </body>
 </html>
