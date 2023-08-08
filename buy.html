@@ -45,32 +45,70 @@
       padding: 40px;
     }
 
-    .product-info {
-      font-size: 20px;
-      margin-bottom: 20px;
-      text-align: right;
-    }
-
-    .product-info span {
-      color: #8a1dfc; /* Purple color for specific info */
-    }
-
     .product-box {
       background-color: #52067d;
       color: #f1f1f1;
       font-size: 16px;
       padding: 20px;
-      border-radius: 10px; /* Rounded corners */
-      border: 2px solid #fff; /* White outline */
-      width: calc(50% - 40px); /* Adjust width based on your preference */
+      border-radius: 10px;
+      border: 2px solid #fff;
+      width: calc(50% - 40px);
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-box h3 {
+      font-size: 24px;
+      margin: 10px 0;
     }
 
     .product-image {
       width: 100%;
-      height: 100%; /* Image will always be fully visible */
+      height: 100%;
       object-fit: cover;
-      border-radius: 8px; /* Rounded corners for image */
+      border-radius: 8px;
+    }
+
+    .product-info {
+      font-size: 20px;
+      text-align: left;
+      max-width: 50%;
+      padding: 0 20px;
+    }
+
+    .product-info h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #8a1dfc;
+    }
+
+    .product-info p {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    .product-info span {
+      font-weight: bold;
+      color: #2ecc71;
+    }
+
+    .purchase-button {
+      background-color: #301934;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    .purchase-button:hover {
+      background-color: #2ecc71;
     }
 
     .footer {
@@ -85,50 +123,27 @@
       font-weight: bold;
     }
 
-    /* Dark Mode Styles */
-    body.dark-mode {
-      background-color: #1a1a1a;
-      color: #e0e0e0;
-    }
-
-    /* Custom Styles for Purchase Button */
-    .purchase-button {
-      background-color: #301934; /* Purple background */
-      color: #fff; /* White text */
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .purchase-button:hover {
-      background-color: #2ecc71; /* Green on hover */
-    }
-
-    /* Stylish Quantity Input Box */
-    .quantity-input {
+    /* Styling for Quantity Box */
+    .quantity-box {
       display: flex;
       align-items: center;
-      background-color: #52067d;
-      color: #f1f1f1;
-      border: 2px solid #fff;
-      border-radius: 5px;
-      padding: 5px;
-      width: 100px;
-      font-size: 16px;
+      margin-top: 15px;
     }
 
-    .quantity-input input {
-      flex: 1;
-      border: none;
-      background-color: transparent;
-      color: #f1f1f1;
+    .quantity-label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #8a1dfc;
+    }
+
+    .quantity-input {
+      padding: 5px 10px;
       font-size: 16px;
+      border: 2px solid #8a1dfc;
+      border-radius: 5px;
+      width: 40px;
       text-align: center;
-      outline: none;
+      color: #8a1dfc;
     }
   </style>
 </head>
@@ -146,21 +161,25 @@
       <p>A Fresh Valorant Account</p>
     </div>
     <div class="product-info">
-      <h2 style="font-weight: bold;">Buy Fresh Valorant Account</h2>
+      <h2>Buy Fresh Valorant Account</h2>
       <p>Product: <span>Fresh Valorant Account</span></p>
       <p>Price: <span>$0.50</span></p>
-      <div class="quantity-input">
-        <input type="number" id="quantity" name="quantity" min="1" max="100" value="1">
-      </div>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="whywontthisworkatall@gmail.com">
-        <input type="hidden" name="item_name" value="Fresh Valorant Account">
-        <input type="hidden" name="amount" value="0.50">
-        <input type="hidden" name="currency_code" value="USD">
-        <button class="purchase-button" type="submit">Purchase</button>
+      <form class="purchase-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <div class="quantity-box">
+          <label class="quantity-label" for="quantity">Quantity:</label>
+          <input class="quantity-input" type="number" id="quantity" name="quantity" min="1" max="100" required>
+        </div>
+        <div class="form-field">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="whywontthisworkatall@gmail.com">
+          <input type="hidden" name="item_name" value="Fresh Valorant Account">
+          <input type="hidden" name="amount" value="0.50">
+          <!-- Replace YOUR_CURRENCY_CODE with the appropriate currency code, e.g., USD, EUR, GBP, etc. -->
+          <input type="hidden" name="currency_code" value="USD">
+          <button class="purchase-button" type="submit">Purchase</button>
+        </div>
       </form>
-      <p>After your purchase, you will receive an email with further instructions. Please allow up to 72 hours for delivery.</p>
+      <p>After your purchase, you will receive an email by paypal to contact us just reply to that email or contact our team through the app Please allow up to 72 hours for delivery we will go as fast as we can.</p>
     </div>
   </div>
 
